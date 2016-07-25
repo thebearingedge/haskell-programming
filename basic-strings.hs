@@ -1,5 +1,6 @@
 module BasicStrings where
 
+
 a :: String -> String
 a str = concat [str, "!"]
 
