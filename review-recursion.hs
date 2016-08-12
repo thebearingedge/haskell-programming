@@ -7,8 +7,9 @@ module ReviewRecursion where
 sumToN :: (Eq a, Num a) => a -> a
 sumToN n
   | n' == 0   = 0
-  | otherwise = n' + sumToN (n' - 1)
-  where n' = abs n
+  | otherwise = n' + sumToN n''
+  where n'  = abs n
+        n'' = n' - 1
 
 -- Write a function that multiplies two integral numbers using
 -- recursive summation. The type should be (Integral a) => a ->
@@ -16,10 +17,9 @@ sumToN n
 
 multSum :: Integral a => a -> a -> a
 multSum x y
-  | x == 0 = 0
-  | y == 0 = 0
-  | otherwise = y + multSum (x' - 1) y
-  where x' = abs x
+  | x == 0 || y == 0 = 0
+  | otherwise        = y + multSum x' y
+  where x' = abs x - 1
 
 -- McCarthy 91
 
