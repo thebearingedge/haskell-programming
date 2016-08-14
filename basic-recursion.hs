@@ -15,7 +15,7 @@ factorial x
   where x' = abs x
 
 incTimes :: (Eq a, Num a) => a -> a -> a
-incTimes 0 n = n
+incTimes 0 n     = n
 incTimes times n = 1 + incTimes (times - 1) n
 
 applyTimes :: (Eq a, Num a) => a -> (b -> b) -> b -> b
@@ -37,13 +37,13 @@ fibonacci :: Integral a => a -> a
 fibonacci nth
   | n == 0    = 0
   | n < 3     = 1
-  | otherwise = fibonacci (nth - 1) + fibonacci (nth - 2)
+  | otherwise = fibonacci (n - 1) + fibonacci (n - 2)
   where n = abs nth
 
 dividedBy :: Integral a => a -> a -> (a, a)
 dividedBy num denom = go num denom 0
   where go n d count
-         | n < d = (count, n)
+         | n < d     = (count, n)
          | otherwise = go (n - d) d (count + 1)
 
 dividedBy' :: Integral a => a -> a -> (a, a)
