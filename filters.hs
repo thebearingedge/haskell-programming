@@ -8,7 +8,6 @@ countMultplesOfThree xs = length $ multiplesOfThree xs
 
 removeArticles :: String -> [String]
 removeArticles str =
-    filter (`notElem` articles) strWords
+    filter (`notElem` articles) (words str)
   where
     articles = ["the", "a", "an"]
-    strWords = words str
