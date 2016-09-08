@@ -4,7 +4,7 @@ multiplesOfThree :: [Integer] -> [Integer]
 multiplesOfThree = filter (\x -> rem x 3 == 0)
 
 countMultplesOfThree :: [Integer] -> Int
-countMultplesOfThree xs = length $ multiplesOfThree xs
+countMultplesOfThree = length . multiplesOfThree
 
 removeArticles :: String -> [String]
 removeArticles str =
